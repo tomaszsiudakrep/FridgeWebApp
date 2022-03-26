@@ -1,8 +1,11 @@
 package com.fridge.fridgewebapplication.group.dao.entity;
 
+import com.fridge.fridgewebapplication.product.dao.entity.Product;
 import com.sun.istack.NotNull;
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "product_group")
@@ -13,7 +16,7 @@ public class Group {
     private LocalDate created_date;
     private boolean archived;
     private LocalDate date_archived;
-//    private List<Product> product = new ArrayList<>();
+    private List<Product> product = new ArrayList<>();
 
 
     public Group(String name) {
@@ -73,17 +76,17 @@ public class Group {
         this.date_archived = date_archived;
     }
 
-//    @OneToMany(
-//            targetEntity = Product.class,
-//            mappedBy = "id",
-//            cascade = CascadeType.ALL,
-//            fetch = FetchType.LAZY
-//    )
-//    public List<Product> getProduct() {
-//        return product;
-//    }
-//
-//    public void setProduct(List<Product> product) {
-//        this.product = product;
-//    }
+    @OneToMany(
+            targetEntity = Product.class,
+            mappedBy = "id",
+            cascade = CascadeType.ALL,
+            fetch = FetchType.LAZY
+    )
+    public List<Product> getProduct() {
+        return product;
+    }
+
+    public void setProduct(List<Product> product) {
+        this.product = product;
+    }
 }
