@@ -47,15 +47,8 @@ public class ProductManager {
 
     @EventListener(ApplicationReadyEvent.class)
     public void fillProductDb() {
-//        Product product = new Product("Bananas");
-//        product.setGroup(groupRepo.findByName("Owoce"));
-//        save(product);
-//        Product product1 = new Product("Coca-Cola");
-//        product1.setGroup(groupRepo.findByName("Napoje"));
-//        save(product1);
-//        Product product2 = new Product("Wędlina");
-//        product2.setGroup(groupRepo.findByName("Mięso"));
-//        save(product2);
+        Product product = new Product("Bananas");
+        save(product, "Owoce");
     }
 
 }

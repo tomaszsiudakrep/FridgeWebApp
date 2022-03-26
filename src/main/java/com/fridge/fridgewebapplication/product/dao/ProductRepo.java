@@ -10,5 +10,5 @@ import javax.transaction.Transactional;
 @Transactional
 public interface ProductRepo extends CrudRepository<Product, Integer> {
 
-
+    Product findByName(String name);
 }
