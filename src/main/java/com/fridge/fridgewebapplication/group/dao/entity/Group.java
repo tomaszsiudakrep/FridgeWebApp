@@ -1,5 +1,6 @@
 package com.fridge.fridgewebapplication.group.dao.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fridge.fridgewebapplication.product.dao.entity.Product;
 import com.sun.istack.NotNull;
 import javax.persistence.*;
@@ -76,6 +77,7 @@ public class Group {
         this.date_archived = date_archived;
     }
 
+    @JsonIgnore
     @OneToMany(
             targetEntity = Product.class,
             mappedBy = "id",

@@ -48,5 +48,6 @@ public class GroupManager {
         save(new Group("Nabial"));
         save(new Group("Napoje"));
         save(new Group("Mięso"));
+        save(new Group("Owoce"));
     }
 }

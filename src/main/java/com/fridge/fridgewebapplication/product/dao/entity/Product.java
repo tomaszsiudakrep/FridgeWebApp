@@ -59,7 +59,7 @@ public class Product {
 
     @JoinColumn(name = "group_id")
     @ManyToOne()
-    @NotNullgit
+    @NotNull
     public Group getGroup() {
         return group;
     }
