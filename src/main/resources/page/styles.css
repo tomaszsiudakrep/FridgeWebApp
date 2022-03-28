@@ -1,0 +1,88 @@
+/* BUTTONS ON THE LEFT TOP SIDE*/
+
+.dropbtn {
+    background-color: #3498DB;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+    background-color: #2980B9;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* BUTTONS ON THE RIGHT TOP SIDE*/
+
+.exit_btn {
+    width: 30px;
+    margin: 0 auto;
+    display: inline;
+    border-radius: 5px;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+    height: 25px;
+    background-color: #3498DB;
+}
+
+.exit_btn:hover {
+    background-color: black;
+}
+
+.profile_btn {
+    width: 30px;
+    height: 25px;
+    margin: 0 auto;
+    display: inline;
+    border-radius: 5px;
+    position: absolute;
+    top: 5px;
+    right: 40px;
+    cursor: pointer;
+    background-color: #3498DB;
+}
+
+.profile_btn:hover {
+    background-color: black;
+}
+
+.settings_btn {
+    width: 30px;
+    height: 25px;
+    margin: 0 auto;
+    display: inline;
+    border-radius: 5px;
+    position: absolute;
+    top: 5px;
+    right: 75px;
+    cursor: pointer;
+    background-color: #3498DB;
+}
+
+.settings_btn:hover {
+    background-color: black;
+}
+
+/*BODY*/
+
+.fas {
+    color: white;
+}
+
+body {
+    background-color: white;
+    background-image:url('images/tapeta.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.show {display: block;}
