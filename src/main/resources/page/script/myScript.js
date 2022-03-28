@@ -20,9 +20,9 @@ $( document ).ready(function() {
  });
 
 
- // $( document ).ready(function() {
- //     $("#editGroupButton").click(function() {
- //        $("#main_left_div").hide();
- //        $("#main_right_div").children().prop('disabled', true);
- //     });
- // } );
+ $( document ).ready(function() {
+     $("#editGroupButton").click(function() {
+        $("#main_left_div").hide();
+        $("#main_right_div").children().prop('disabled', true);
+     });
+ } );
