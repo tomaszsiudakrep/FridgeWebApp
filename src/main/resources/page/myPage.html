@@ -6,6 +6,7 @@
     <link href="styles.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
+
 <body>
     <div class="main">
         <div class="action_btn">
@@ -43,13 +44,54 @@
 
         <hr>
 
+        <div class="window">
+            <div class="main_left_div">
+                <div class="top_div">
+                    <label id="products_label">PRODUCTS</label>
+                    <button id="deleteGroupButton" class="label_buttons">
+                        <i class="far fa-trash-alt"></i>
+                    </button>
+                    <button id="editGroupButton" class="label_buttons">
+                        <i class="far fa-edit"></i>
+                    </button>
+                    <button id="addProductButton" class="label_buttons">
+                        <i class="fa fa-plus"></i>
+                    </button>
+                </div>
+                <input id="productSearch" class="search" placeholder="Enter the product name"/>
+                <select class="product_and_group" name="productSearch" size = "7">
+                    <option value="test">Cola-Cola</option>
+                    <option value="test2">Ser gouda</option>
+                    <option value="test23">Szynka Babuni</option>
+                </select>
+            </div>
 
-
+            <div class="main_right_div">
+                <div class="top_div">
+                    <label id="groups_label">GROUPS</label>
+                    <button class="label_buttons">
+                        <i class="far fa-trash-alt"></i>
+                    </button>
+                    <button class="label_buttons">
+                            <i class="far fa-edit"></i>
+                    </button>
+                    <button class="label_buttons">
+                        <i class="fa fa-plus"></i>
+                    </button>
+                </div>
+                <input id="groupSearch" class="search" placeholder="Enter the group name"/>
+                <select class="product_and_group" name="groupSearch" size = "7">
+                    <option value="test">Serki</option>
+                    <option value="test2">Nabiał</option>
+                    <option value="test23">Test</option>
+                    <option value="test24">Testowy</option>
+                </select>
+            </div>
+        </div>
     </div>
 
-
-
-
+    <script type="text/javascript" src="script/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="script/myScript.js"></script>
 
 </body>
 </html>
