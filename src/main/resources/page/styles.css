@@ -76,6 +76,10 @@
 /* LEFT MAIN WINDOW   */
 
 .main_left_div {
+    display: none;
+}
+
+.canvas_left {
     background-color: white;
     width: 49.5%;
     float: left;
@@ -83,20 +87,22 @@
     outline: black 2px solid;
     resize:none;
     overflow:auto;
-    display: none;
 }
 
 /* RIGHT MAIN WINDOW   */
 
 .main_right_div {
+    display: block;
+    display: none;
+}
+
+.canvas_right {
     background-color: white;
     width: 49.5%;
-    height: 100%;
     float: right;
     height: 400px;
     outline: black 2px solid;
     display: block;
-    display: none;
 }
 
 /* together RIGHT AND LEFT MAIN WINDOW   */
@@ -111,14 +117,11 @@
 
 .top_div {
     background-color: #6fbef3;
-
     text-align: center;
-    /* justify-content: center;
-    align-items: center; */
 }
 
 .search {
-    width:98.8%;
+    width:98.5%;
 }
 
 .label_buttons {
