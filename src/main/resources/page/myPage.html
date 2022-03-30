@@ -91,48 +91,48 @@
                                     class="datatable__row datatable__row--add"
                                     method="POST"
                                     action="http://localhost:8080/api/group"
-                                    data-task-add-form
+                                    data-group-add-form
                             >
                                 <fieldset class="datatable__row-section datatable__row-section--input-section">
                                     <label class="datatable__input-label">
                                         Group name
                                     </label>
-                                    <input type="text" id = "titleGroup" name="titleGroup2" placeholder="Insert a group name" required minlength="3">
+                                    <input type="text" id = "titleGroup" name="titleGroup" placeholder="Insert a group name" required minlength="3">
                                 </fieldset>
                                 <fieldset class="datatable__row-section datatable__row-section--button-section">
-                                    <button type="submit" data-task-add-button class="datatable__button">Add a group</button>
+                                    <button type="submit" data-group-add-button class="datatable__button">Add a group</button>
                                 </fieldset>
                             </form>
                         </section>
 
                         <section class="datatable">
-                            <h2>Tasks from the API</h2>
-                            <div class="datatable__tasks-container" data-tasks-container></div>
+                            <h2>Groups from the API</h2>
+                            <div class="datatable__groups-container" data-group-container></div>
                         </section>
 
                         <div class="template" data-datatable-row-template>
-                            <form class="datatable__row" data-task-id="0">
-                                <fieldset class="datatable__row-section datatable__row-section--input-section" data-task-name-section>
+                            <form class="datatable__row" data-group-id="0">
+                                <fieldset class="datatable__row-section datatable__row-section--input-section" data-group-name-section>
                                     <label class="datatable__input-label">
-                                        Task name
+                                        Group name
                                     </label>
-                                    <input type="text" name="title" placeholder="Insert a new task name" data-task-name-input required minlength="3">
-                                    <p class="datatable__field-value" data-task-name-paragraph></p>
+                                    <input type="text" name="title" placeholder="Insert a new group name" data-group-name-input required minlength="3">
+                                    <p class="datatable__field-value" data-group-name-paragraph></p>
                                 </fieldset>
 
-                                <fieldset class="datatable__row-section datatable__row-section--input-section" data-task-content-section>
+                                <fieldset class="datatable__row-section datatable__row-section--input-section" data-group-content-section>
                                     <label class="datatable__input-label">
-                                        Task content
+                                        Group archived flag
                                     </label>
-                                    <textarea name="title" placeholder="Insert new task content" data-task-content-input required minlength="3"></textarea>
-                                    <p class="datatable__field-value" data-task-content-paragraph></p>
+                                    <textarea name="title" placeholder="Insert new archived flag" data-group-content-input required minlength="3"></textarea>
+                                    <p class="datatable__field-value" data-group-content-paragraph></p>
                                 </fieldset>
 
                                 <fieldset class="datatable__row-section datatable__row-section--button-section">
-                                    <button type="button" data-task-submit-update-button class="datatable__button datatable__button--editing ">Submit update</button>
-                                    <button type="button" data-task-edit-abort-button class="datatable__button datatable__button--editing">Abort update</button>
-                                    <button type="button" data-task-edit-button class="datatable__button">Edit</button>
-                                    <button type="button" data-task-delete-button class="datatable__button">Delete</button>
+                                    <button type="button" data-group-submit-update-button class="datatable__button datatable__button--editing ">Submit update</button>
+                                    <button type="button" data-group-edit-abort-button class="datatable__button datatable__button--editing">Abort update</button>
+                                    <button type="button" data-group-edit-button class="datatable__button">Edit</button>
+                                    <button type="button" data-group-delete-button class="datatable__button">Delete</button>
                                 </fieldset>
                             </form>
                         </div>

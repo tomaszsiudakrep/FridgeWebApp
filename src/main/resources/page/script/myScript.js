@@ -1,4 +1,4 @@
-$( document ).ready(function() {
+$(document).ready(function() {
     $("#products").click(function() {
         $("#main_left_div").show();
         $("#main_right_div").show();
@@ -6,7 +6,7 @@ $( document ).ready(function() {
     });
  });
 
-$( document ).ready(function() {
+$(document).ready(function() {
     $("#add_group").click(function() {
         // $("#top_div").children().prop('disabled', true);
         $("#main_left_div").hide();
@@ -43,20 +43,20 @@ $( document ).ready(function() {
 $(document).ready(function () {
     var apiRoot = 'http://localhost:8080/api/';
     var datatableRowTemplate = $('[data-datatable-row-template]').children()[0];
-    var groupContainer = $('[data-tasks-container]');
+    var groupContainer = $('[data-group-container]');
 
     // init
-    getAllTasks();
+    getAllGroups();
 
     function createElement(data) {
         var element = $(datatableRowTemplate).clone();
 
-        element.attr('data-task-id', data.id);
-        element.find('[data-task-name-section] [data-task-name-paragraph]').text(data.title);
-        element.find('[data-task-name-section] [data-task-name-input]').val(data.title);
+        element.attr('data-group-id', data.id);
+        element.find('[data-group-name-section] [data-group-name-paragraph]').text(data.title);
+        element.find('[data-group-name-section] [data-group-name-input]').val(data.title);
 
-        element.find('[data-task-content-section] [data-task-content-paragraph]').text(data.content);
-        element.find('[data-task-content-section] [data-task-content-input]').val(data.content);
+        element.find('[data-group-content-section] [data-group-content-paragraph]').text(data.content);
+        element.find('[data-group-content-section] [data-group-content-input]').val(data.content);
 
         return element;
     }
@@ -68,7 +68,7 @@ $(document).ready(function () {
         });
     }
 
-    function getAllTasks() {
+    function getAllGroups() {
         var requestUrl = apiRoot + 'group/all';
 
         $.ajax({
@@ -78,12 +78,12 @@ $(document).ready(function () {
         });
     }
 
-    function handleTaskUpdateRequest() {
+    function handleGroupUpdateRequest() {
         var parentEl = $(this).parent().parent();
-        var groupId = parentEl.attr('data-task-id');
-        var groupTitle = parentEl.find('[data-task-name-input]').val();
-        var groupContent = parentEl.find('[data-task-content-input]').val();
-        var requestUrl = apiRoot + 'updateTask';
+        var groupId = parentEl.attr('data-group-id');
+        var groupTitle = parentEl.find('[data-group-name-input]').val();
+        var groupContent = parentEl.find('[data-group-content-input]').val();
+        var requestUrl = apiRoot + 'group';
 
         $.ajax({
             url: requestUrl,
@@ -92,26 +92,26 @@ $(document).ready(function () {
             contentType: "application/json; charset=utf-8",
             dataType: 'json',
             data: JSON.stringify({
-                id: groupId,
-                title: groupTitle,
-                content: groupContent
+                "id": groupId,
+                "title": groupTitle,
+                "content": groupContent
             }),
             success: function(data) {
-                parentEl.attr('data-task-id', data.id).toggleClass('datatable__row--editing');
-                parentEl.find('[data-task-name-paragraph]').text(groupTitle);
-                parentEl.find('[data-task-content-paragraph]').text(groupContent);
+                parentEl.attr('data-group-id', data.id).toggleClass('datatable__row--editing');
+                parentEl.find('[data-group-name-paragraph]').text(groupTitle);
+                parentEl.find('[data-group-content-paragraph]').text(groupContent);
             }
         });
     }
 
-    function handleTaskDeleteRequest() {
+    function handleGroupDeleteRequest() {
         var parentEl = $(this).parent().parent();
-        var groupId = parentEl.attr('data-task-id');
-        var requestUrl = apiRoot + 'deleteTask';
+        var groupId = parentEl.attr('data-group-id');
+        var requestUrl = apiRoot + 'group';
 
         $.ajax({
-            url: requestUrl + '/?' + $.param({
-                groupId: groupId
+            url: requestUrl + '?' + $.param({
+                "id": groupId
             }),
             method: 'DELETE',
             success: function() {
@@ -120,12 +120,10 @@ $(document).ready(function () {
         })
     }
 
-    function handleTaskSubmitRequest(event) {
+    function handleGroupSubmitRequest(event) {
         event.preventDefault();
 
-        // var groupTitle = $(this).find("titleGroup").val();
         var groupTitle = $("#titleGroup").val();
-        // var groupContent = $(this).find('[name="content"]').val();
         var requestUrl = apiRoot + 'group';
 
         $.ajax({
@@ -139,7 +137,7 @@ $(document).ready(function () {
             }),
             complete: function(data) {
                 if(data.status === 200) {
-                    // getAllTasks();
+                    // getAllGroups();
                     console.log("STATUS: " + data.status);
                 }
             }
@@ -150,18 +148,18 @@ $(document).ready(function () {
         var parentEl = $(this).parent().parent();
         parentEl.toggleClass('datatable__row--editing');
 
-        var groupTitle = parentEl.find('[data-task-name-paragraph]').text();
-        var groupContent = parentEl.find('[data-task-content-paragraph]').text();
+        var groupTitle = parentEl.find('[data-group-name-paragraph]').text();
+        var groupContent = parentEl.find('[data-group-content-paragraph]').text();
 
-        parentEl.find('[data-task-name-input]').val(groupTitle);
-        parentEl.find('[data-task-content-input]').val(groupContent);
+        parentEl.find('[data-group-name-input]').val(groupTitle);
+        parentEl.find('[data-group-content-input]').val(groupContent);
     }
 
-    $('[data-task-add-form]').on('submit', handleTaskSubmitRequest);
+    $('[data-group-add-form]').on('submit', handleGroupSubmitRequest);
 
-    groupContainer.on('click','[data-task-edit-button]', toggleEditingState);
-    groupContainer.on('click','[data-task-edit-abort-button]', toggleEditingState);
-    groupContainer.on('click','[data-task-submit-update-button]', handleTaskUpdateRequest);
-    groupContainer.on('click','[data-task-delete-button]', handleTaskDeleteRequest);
+    groupContainer.on('click','[data-group-edit-button]', toggleEditingState);
+    groupContainer.on('click','[data-group-edit-abort-button]', toggleEditingState);
+    groupContainer.on('click','[data-group-submit-update-button]', handleGroupUpdateRequest);
+    groupContainer.on('click','[data-group-delete-button]', handleGroupDeleteRequest);
 });
 
