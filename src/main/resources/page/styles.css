@@ -105,6 +105,10 @@
     display: block;
 }
 
+.add_group_window {
+    display: none;
+}
+
 /* together RIGHT AND LEFT MAIN WINDOW   */
 
 .product_and_group {
@@ -133,6 +137,10 @@
     justify-content: center;
     align-items: center;
     margin-top: 1px;
+}
+
+.add_group_window {
+    display: none;
 }
 
 /*BODY*/

@@ -45,10 +45,10 @@ public class ProductManager {
         productRepo.deleteById(id);
     }
 
-    @EventListener(ApplicationReadyEvent.class)
-    public void fillProductDb() {
-        Product product = new Product("Bananas");
-        save(product, "Owoce");
-    }
+//    @EventListener(ApplicationReadyEvent.class)
+//    public void fillProductDb() {
+//        Product product = new Product("Bananas");
+//        save(product, "Owoce");
+//    }
 
 }

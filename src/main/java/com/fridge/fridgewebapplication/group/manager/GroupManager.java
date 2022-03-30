@@ -44,11 +44,11 @@ public class GroupManager {
         return groupRepo.findByArchived(value);
     }
 
-    @EventListener(ApplicationReadyEvent.class)
-    public void fillDb() {
-        save(new Group("Nabial"));
-        save(new Group("Napoje"));
-        save(new Group("Mięso"));
-        save(new Group("Owoce"));
-    }
+//    @EventListener(ApplicationReadyEvent.class)
+//    public void fillDb() {
+//        save(new Group("Nabial"));
+//        save(new Group("Napoje"));
+//        save(new Group("Mięso"));
+//        save(new Group("Owoce"));
+//    }
 }
